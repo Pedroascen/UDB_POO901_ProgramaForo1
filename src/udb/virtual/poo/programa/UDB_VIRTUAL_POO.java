@@ -1,6 +1,7 @@
 package udb.virtual.poo.programa;
 
 //Aplicacion para registrar alumnos con interfaz Map
+import java.awt.TextField;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Iterator;
@@ -10,10 +11,12 @@ import java.util.Set;
 public class UDB_VIRTUAL_POO {
         //variables de tipo estaticas
         static String carnet,nombre,buscar;
+        //Declaracion del HashMap
         static  HashMap<String, String> EstudiantesMap = new HashMap<>();
     public static void main(String[] args) {
         //Datos de entrada con Scanner
         Scanner entrada = new Scanner(System.in);
+        String num; 
         int opcion;
         
         do{
@@ -21,20 +24,26 @@ public class UDB_VIRTUAL_POO {
         System.out.println("***************************************");
         System.out.print("      Bienvenido a UDB Virtual\n");
         System.out.print("1- Ingresar alumno.\n");
-        System.out.print("2- Filtrar alumno.\n");
+        System.out.print("2- Buscar alumno.\n");
         System.out.print("3- Mostrar alumnos.\n");
         System.out.print("4- Eliminar alumno.\n");
         System.out.print("5- Salir.\n");
         System.out.print("Por favor, ingrese una opción del menú:\n");
         
         //entrada de dato
-        opcion = entrada.nextInt();
+        num = entrada.next();
+        //validacion para solo números
+        while(!num.matches("\\d{1}")){
+            System.out.println("Ingrese una opción válida.");
+            num = entrada.next();
+        }
+        opcion = Integer.parseInt(num);
         System.out.println("***************************************");
         
         //casos de entrada
         switch(opcion){
             case 1:
-                //Proceso
+                //Metodo
                 IngresarRegistro();
                 //final proceso
                 System.out.println("***************************************");
@@ -47,7 +56,7 @@ public class UDB_VIRTUAL_POO {
                 }
             break;
             case 2: 
-                 //Proceso
+                 //Metodo
                 FiltrarRegistro();
                 //final proceso
                 System.out.println("***************************************");
@@ -60,7 +69,7 @@ public class UDB_VIRTUAL_POO {
                 }
             break;
             case 3: 
-                 //Proceso
+                 //Metodo
                 ListarRegistro();
                 //final proceso
                 System.out.println("***************************************");
@@ -73,7 +82,7 @@ public class UDB_VIRTUAL_POO {
                 }
             break;
             case 4:
-                 //Proceso
+                 //Metodo
                 EliminarRegistro();
                 //final proceso
                 System.out.println("***************************************");
@@ -92,6 +101,11 @@ public class UDB_VIRTUAL_POO {
         default: System.err.println("Opción inválida.");
             break;
         }}while(opcion!=5);
+    }
+    
+    //metodo para validar opcion
+    public boolean Validar(){
+            return false;
     }
     
     //metodo para ingresar registro

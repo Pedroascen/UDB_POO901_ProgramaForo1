@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-public class PasajerosVuelo {
+public class EjemploMap {
     
      public static void main(String[] args) {
         //¿Cómo se declaran?
