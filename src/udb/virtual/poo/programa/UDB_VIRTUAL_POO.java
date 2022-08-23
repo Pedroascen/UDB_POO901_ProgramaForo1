@@ -13,7 +13,7 @@ public class UDB_VIRTUAL_POO {
         static  HashMap<String, String> EstudiantesMap = new HashMap<>();
     public static void main(String[] args) {
         //Datos de entrada con Scanner
-        Scanner entrada = new Scanner(System.in);
+		Scanner entrada = new Scanner(System.in);
         String num;
         int opcion;
         
